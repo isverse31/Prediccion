@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction App</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        form {
+            margin-top: 300px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            max-width: 400px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        label {
+            margin-top: 10px;
+            display: block;
+        }
+
+        select, input {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+    </style>
+</head>
+<br><br><br><br><br>
+<body>
+    <h1>Predecir precio de producción</h1>
+
+    <form method="POST">
+        <label for="Nomestado">Estado:</label><br>
+<select id="Nomestado" name="Nomestado">
+    <option value="1">Aguascalientes</option>
+    <option value="2">Baja California</option>
+    <option value="3">Baja California Sur</option>
+    <option value="4">Campeche</option>
+    <option value="5">Michoacán</option>
+    <option value="6">Chihuahua</option>
+    <option value="7">Veracruz</option>
+    <option value="8">Guanajuato</option>
+    <option value="9">Zacatecas</option>
+    <!-- Agrega más opciones según sea necesario -->
+</select><br>
+
+        <label for="Nomcultivo">Cultivo:</label><br>
+<select id="Nomcultivo" name="Nomcultivo">
+    <option value="1">Aguacate</option>
+    <option value="2">Durazno</option>
+    <option value="3">Limón</option>
+    <option value="4">Manzana</option>
+    <option value="5">Melón</option>
+    <option value="6">Guayaba</option>
+    <option value="7">Pera</option>
+    <option value="8">Sandía</option>
+    <option value="9">Uva</option>
+    <option value="10">Piña</option>
+</select><br>
+
+<label for="Sembrada">Sembrada:</label><br>
+<input type="text" id="Sembrada" name="Sembrada"><br>
+
+<label for="Cosechada">Cosechada:</label><br>
+<input type="text" id="Cosechada" name="Cosechada"><br>
+
+<label for="Volumenproduccion" style="display: none;">Volumen de Producción:</label><br>
+<input type="text" id="Volumenproduccion" name="Volumenproduccion" style="display: none;" value="500"><br>
+
+<label for="Rendimiento" style="display: none;">Rendimiento:</label><br>
+<input type="text" id="Rendimiento" name="Rendimiento" style="display: none;" value="0.5"><br>
+
+<label for="Preciomediorural" style="display: none;">Precio Medio Rural:</label><br>
+<input type="text" id="Preciomediorural" name="Preciomediorural" style="display: none;" value="50"><br>
+
+<label for="Nomcultivo_1" style="display: none;">Cultivo 1:</label><br>
+<input type="text" id="Nomcultivo_1" name="Nomcultivo_1" style="display: none;" value="2"><br>
+
+<label for="Sembrada_1" style="display: none;">Sembrada 1:</label><br>
+<input type="text" id="Sembrada_1" name="Sembrada_1" style="display: none;" value="120"><br>
+
+<label for="Cosechada_1" style="display: none;">Cosechada 1:</label><br>
+<input type="text" id="Cosechada_1" name="Cosechada_1" style="display: none;" value="100"><br>
+
+<label for="Volumenproduccion_1" style="display: none;">Volumen de Producción 1:</label><br>
+<input type="text" id="Volumenproduccion_1" name="Volumenproduccion_1" style="display: none;" value="600"><br>
+
+<label for="Rendimiento_1" style="display: none;">Rendimiento 1:</label><br>
+<input type="text" id="Rendimiento_1" name="Rendimiento_1" style="display: none;" value="0.6"><br>
+
+<label for="Preciomediorural_1" style="display: none;">Precio Medio Rural 1:</label><br>
+<input type="text" id="Preciomediorural_1" name="Preciomediorural_1" style="display: none;" value="55"><br>
+
+<label for="Valorproduccion_1" style="display: none;">Valor de Producción 1:</label><br>
+<input type="text" id="Valorproduccion_1" name="Valorproduccion_1" style="display: none;" value="1000"><br>
+
+        <input type="submit" value="Predict">
+    </form>
+    <h2>{{ prediction_text }}</h2>
+</body>
+</html>
